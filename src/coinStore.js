@@ -1,4 +1,10 @@
 import api from "./api";
+import { configure } from "mobx";
+
+// configuring mobx to allow change in observable variable without action
+configure({
+  enforceActions: "never",
+});
 
 let defCoins = [
   "bitcoin",
@@ -27,7 +33,6 @@ let defCoins = [
 export function createCoinStore() {
   return {
     coins: ["hello"],
-    rendered: false,
     async updateCoins() {
       const res = api.service.get(
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=" +
@@ -36,7 +41,9 @@ export function createCoinStore() {
       );
       this.coins = (await res).data;
       this.rendered = true;
-      console.log(this.coins);
+    },
+    trackNewCoin(coin) {
+      defCoins.push(coin);
     },
   };
 }

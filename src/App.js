@@ -1,5 +1,5 @@
 import "./App.css";
-import DataRender from "./DataRender";
+import DataRender from "./components/DataRender";
 import React from "react";
 
 function App() {

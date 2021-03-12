@@ -1,6 +1,6 @@
-import React, { Component, useEffect } from "react";
-import { Data } from "./components/Data";
-import { Updater } from "./components/Updater";
+import React, { Component } from "react";
+import { Data } from "./Data";
+import { Updater } from "./Updater";
 
 export default class DataRender extends Component {
   render() {
