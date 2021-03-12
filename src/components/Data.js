@@ -40,6 +40,7 @@ export const Data = () => {
   useEffect(() => {
     coinsStore.updateCoins();
   }, []);
+
   let index = 0;
 
   console.log("refreshed");
