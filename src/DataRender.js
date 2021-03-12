@@ -6,12 +6,14 @@ const Data = () => {
   const coinsStore = useStore();
   coinsStore.updateCoins();
 
+  let coins = coinsStore.coins;
+
   return useObserver(() => (
-    <p>
-      {coinsStore.coins.map((coin) => (
-        <p id={coin.name}>{coin.name}</p>
+    <ul>
+      {coins.map((coin) => (
+        <li key={coin.name}> {coin.name} </li>
       ))}
-    </p>
+    </ul>
   ));
 };
 
