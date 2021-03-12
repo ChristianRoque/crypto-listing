@@ -1,11 +1,11 @@
 import { useStore } from "../StoreContext";
+import { useEffect } from "react";
 
 export const Updater = () => {
   const coinsStore = useStore();
 
   const interval = setInterval(() => {
-    //changing state causes page to rerender
-    coinsStore.rerender += 1;
+    coinsStore.updateCoins();
   }, 10000);
 
   return () => clearInterval(interval);
