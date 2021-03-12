@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+#index {
+  color: blue;
+  width: 5%;
+  font-weight: bold;
+  text-align: left;
+}
+
+#name {
+  text-align: left;
+  width: 11%;
+}
+
+#index-Header {
+  width: 3%;
+}

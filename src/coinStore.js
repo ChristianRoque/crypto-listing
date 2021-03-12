@@ -40,7 +40,6 @@ export function createCoinStore() {
           "&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d"
       );
       this.coins = (await res).data;
-      this.rendered = true;
     },
     trackNewCoin(coin) {
       defCoins.push(coin);
