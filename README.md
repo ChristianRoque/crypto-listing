@@ -1,4 +1,4 @@
-[Coin listing](https://crypto-listing.herokuapp.com/)
+## [Coin listing](https://crypto-listing.herokuapp.com/)
 
 ![](https://i.imgur.com/2Yf1HK2.png)
 
