@@ -1,11 +1,12 @@
 import "./App.css";
 import DataRender from "./components/DataRender";
 import React from "react";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div>
-      <DataRender></DataRender>
+      <Home></Home>
     </div>
   );
 }

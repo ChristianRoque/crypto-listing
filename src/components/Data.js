@@ -7,6 +7,8 @@ import styled from "styled-components";
 
 const Table = styled.table`
   max-width: 100%fit-content;
+  border-spacing: 0px;
+  font-size: 75%;
 `;
 const Thead = styled.thead``;
 const Row = styled.tr``;
@@ -19,6 +21,7 @@ const Cell = styled.td`
     }
   }};
   text-align: right;
+  background-color: #cfeff9;
 `;
 const CellHead = styled.th`
   width: 10%;
@@ -96,8 +99,18 @@ export const Data = () => {
                   >
                     {coin.price_change_percentage_7d_in_currency.toFixed(2)}%
                   </Cell>
-                  <Cell key={coin.total_volume}>${coin.total_volume}</Cell>
-                  <Cell key={coin.market_cap}>${coin.market_cap}</Cell>
+                  <Cell key={coin.total_volume}>
+                    $
+                    {coin.total_volume
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </Cell>
+                  <Cell key={coin.market_cap}>
+                    $
+                    {coin.market_cap
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </Cell>
                 </Row>
               );
             })}
