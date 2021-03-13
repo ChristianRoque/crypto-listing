@@ -28,6 +28,14 @@ let defCoins = [
   "crypto-com-chain",
   "cosmos",
   "vechain",
+  "okb",
+  "vechain",
+  "chiliz",
+  "monero",
+  "solana",
+  "eos",
+  "iota",
+  "avalanche",
 ];
 
 export function createCoinStore() {
@@ -41,7 +49,7 @@ export function createCoinStore() {
           "&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d"
       );
       this.coins = (await res).data;
-      console.log("Made a call");
+      console.log(defCoins);
     },
     trackNewCoin(coin) {
       defCoins.push(coin);

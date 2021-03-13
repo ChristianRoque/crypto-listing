@@ -10,6 +10,7 @@ const Table = styled.table`
   border-spacing: 0px;
   font-size: 75%;
 `;
+
 const Thead = styled.thead``;
 const Row = styled.tr``;
 const Cell = styled.td`
@@ -22,6 +23,7 @@ const Cell = styled.td`
   }};
   text-align: right;
   background-color: #cfeff9;
+  padding-right: 2%;
 `;
 const CellHead = styled.th`
   width: 10%;
@@ -45,8 +47,6 @@ export const Data = () => {
   }, []);
 
   let index = 0;
-
-  console.log("refreshed");
 
   return useObserver(() => (
     <Table>
@@ -72,7 +72,12 @@ export const Data = () => {
                     {index}
                   </Cell>
                   <Cell id="name" key={coin.name}>
-                    <LogoImage id="icon" src={coin.image} alt="Logo" />
+                    <LogoImage
+                      key={coin.image}
+                      id="icon"
+                      src={coin.image}
+                      alt="Logo"
+                    />
                     {coin.name}
                   </Cell>
                   <Cell className="symbol" key={coin.symbol}>
